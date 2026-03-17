@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo folha Pagamento</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="formulario">
+    <h3> Sistema de cálculo de Folha de Pagamento</h3>
+    <h4>Dados do contribuinte</h4>
+        <form id="formIMC"onsubmit="processaCalculo(event)">
+            <label for="salario">salario bruto</label>
+            <input type="number" id="nome" placeholder="Ex: R$ 1621,00"
+            minlength="2" maxlength="100"
+            required title="Salário Bruto ">
+
+            <label for="inss">INSS</label>
+            <input type="number" id="inss" min="0" disabled placeholder="Cálculo Automático">
+          
+
+            <label for="irrf">IRRF</label>
+            <input type="number" id="irrf" min="0" disabled placeholder="Cálculo Automático">
+            
+
+            <button type="Submit">Calcular Imposto </button>
+            <button type="Reset" class="limpar"> Limpar</button>
+
+            <label for="salario liquido"> Salário Liquido R$ </label>
+            <input type="number" id="liquido" min="0" disabled placeholder="Cálculo Automático">
+
+        </form>
+    </div>
+</body>
+</html>
