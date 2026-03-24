@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo folha Pagamento</title>
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+    <title>Calculadora Salarial 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
-    <div class="formulario">
-    <h3> Sistema de cálculo de Folha de Pagamento</h3>
-    <h4>Dados do contribuinte</h4>
-        <form id="formIMC"onsubmit="processaCalculo(event)">
-            <label for="salario">salario bruto</label>
-            <input type="number" id="nome" placeholder="Ex: R$ 1621,00"
-            minlength="2" maxlength="100"
-            required title="Salário Bruto ">
 
-            <label for="inss">INSS</label>
-            <input type="number" id="inss" min="0" disabled placeholder="Cálculo Automático">
-          
+    <form class="formulario" onsubmit="calcularSalarioPrincipal(event)">
+        <h2>Holerite Digital 2026</h2>
 
-            <label for="irrf">IRRF</label>
-            <input type="number" id="irrf" min="0" disabled placeholder="Cálculo Automático">
-            
+        <label for="salarioBruto">Salário Bruto (R$)</label>
+        <input type="number" id="salarioBruto" placeholder="Digite o salário bruto" step="0.01" autofocus>
 
-            <button type="Submit">Calcular Imposto </button>
-            <button type="Reset" class="limpar"> Limpar</button>
+        <label for="descInss">Desconto INSS (Tabela 2026)</label>
+        <input type="text" id="descInss" disabled placeholder="R$ 0,00">
 
-            <label for="salario liquido"> Salário Liquido R$ </label>
-            <input type="number" id="liquido" min="0" disabled placeholder="Cálculo Automático">
+        <label for="descIrrf">Imposto de Renda (Isenção até 5k)</label>
+        <input type="text" id="descIrrf" disabled placeholder="R$ 0,00">
 
-        </form>
-    </div>
+        <button type="submit" id="btnCalcular">Calcular Agora</button>
+        <button type="button" id="btnLimpar" class="clear">Limpar Tudo</button>
+
+        <div id="resultado">
+            <strong>Salário Líquido Final:</strong>
+            <span id="valorLiquido">R$ 0,00</span>
+        </div>
+    </form>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
